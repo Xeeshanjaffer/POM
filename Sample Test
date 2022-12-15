@@ -1,0 +1,32 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SeleniumTest
+{
+    class Program
+    {
+        [TestClass]
+
+        public class UnitTest1
+        {
+            [TestMethod]
+            public void Testcase_01()
+            {
+                IWebDriver driver = new ChromeDriver();
+                driver.Manage().Window.Maximize();
+
+                driver.Url = "https://adactinhotelapp.com";
+                driver.FindElement(By.Id("Username")).SendKeys("ZeeshanTester");
+                driver.FindElement(By.Id("Password")).SendKeys("ZeeshanTester");
+                driver.FindElement(By.Id("login")).Click();
+                driver.Close();
+            }
+        }
+    }
+}
